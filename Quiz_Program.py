@@ -11,17 +11,17 @@ questions = [["What is the capital of France?", "A: Berlin", "B: Madrid", "C: Ro
              ["What is the freezing point of water in degrees Celsius?", "A: 32°C", "B: 10°C", "C: 0°C", "D: -10°C"],
              ["Which animal is known as the largest mammal on earth?", "A: Blue Whale", "B: Giraffe", "C: Elephant", "D: Hippopotamus"]
              ]
-answers = ["d", "a", "b", "c", "a"]
+answers = ["d", "a", "b", "c", "a"] 
 
 for i, question in enumerate(questions): # creates a index for which number the question is on as the i variable and puts the question as the questions details
     for line in question:
         print(line)
     while True:
-        answer = input("Enter your answer: ").lower()
+        answer = input("Enter your answer: ").lower().strip() #.strip to make it so if you put spaces in the code it doesnt give you an invalid answer#.lower to lowercase everything so if the user puts a capital it doesnt ruin everything
         if answer in valid_answers:
             print("question answered\n")
             if answer == answers[i]:
-                total_score += 1
+                total_score += 1  #If the answer is correct it will add one score
             break
         else:
             print("Enter a valid answer")
